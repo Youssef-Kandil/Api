@@ -1,0 +1,29 @@
+SELECT COUNT(*) as isAlreadyIn FROM `in_time` WHERE emp_id = 9008 AND DATE_FORMAT(date, '%Y-%m-%d')  LIKE CURRENT_DATE ;
+
+
+SELECT employees.*,
+ (SELECT SUM(deduction.mony) FROM deduction
+    WHERE deduction.emp_id = employees.id) AS deduction_mony,
+ (SELECT SUM(directdeduction.mony) FROM directdeduction 
+    WHERE directdeduction.emp_id = employees.id) AS directdeduction_mony,
+ (SELECT SUM(incentive.mony) FROM incentive 
+    WHERE incentive.emp_id = employees.id) AS incentive_mony, 
+ (SELECT SUM(directincentive.mony) FROM directincentive 
+    WHERE directincentive.emp_id = employees.id) AS directincentive_mony,
+ (SELECT COUNT(DISTINCT permissions.date) FROM permissions 
+    WHERE permissions.emp_id = employees.id) AS permissions_count,
+ (SELECT COUNT(DISTINCT absence.date) FROM absence 
+    WHERE absence.emp_id = employees.id) AS absence_count FROM employees 
+ WHERE employees.id = 9008;
+
+
+ SELECT * FROM `sales`WHERE date BETWEEN '2023-11-21 00:00:00' AND '2023-11-25 23:59:59';
+
+
+✅ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '0000';
+ ✅flush privileges;
+
+
+ ✅STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+
+ ❌ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
