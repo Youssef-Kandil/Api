@@ -5,7 +5,7 @@ const mysql = require('mysql');
 try{
     
     const connection = mysql.createConnection({
-        host: 'localhost',
+        host: '192.168.1.15',
         port:3307,
         user:'root',
         database:'logico_sys_gym',
