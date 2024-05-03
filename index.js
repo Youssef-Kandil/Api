@@ -64,7 +64,7 @@ app.use(ExpensesRouter);
 app.use(ReportsRouter);
 
 app.get('/', (req, res) => {
-  res.send(`<h1>LOGICO GYM SYS</h1>`)
+  res.send(`<h1>LOGICO GYM API SYS </h1>`)
 })
 
 
