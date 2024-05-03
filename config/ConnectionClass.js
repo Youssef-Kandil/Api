@@ -8,7 +8,7 @@ class ConnectionClass {
                 host: 'buylifjc78rygpv8lfhn-mysql.services.clever-cloud.com',
                 port:3306,
                 user:'ufvzxszrpjnqlp0z',
-                database:"ufvzxszrpjnqlp0z",
+                database:"buylifjc78rygpv8lfhn",
                 password: 'pnJuDwU8bv6TOLLAKGE7',
                 
             })
